@@ -1,17 +1,18 @@
 const clients = [];
 
 const addClient = ({id,name,room}) =>{
-    name = name.trim().toLowercase();
-    room = room.trim().toLowercase();
+    name = name.trim().toLowerCase();
+    room = room.trim().toLowerCase();
 
     const exists = clients.find((c)=>c.room === room && c.name === name)
+    if(!name || !room) return { error: 'Username and room are required.' };
     if(exists){
         return {error: "User already exists"};
     }
 
-    const c = {id,name,room};
-    clients.push(c);
-    return {c};
+    const client = {id,name,room};
+    clients.push(client);
+    return {client};
 }
 
 const removeClient = (id) =>{

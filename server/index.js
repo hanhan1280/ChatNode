@@ -19,18 +19,18 @@ io.on('connection', (socket) => {
     socket.on('join', ({ name, room }, callback) => {
         const { error, client } = addClient({ id: socket.id, name, room });
         if (error) return callback(error);
-
+        socket.join(client.room);
         socket.emit('message', { user: 'admin', text: `${client.name}, welcome to room ${client.room}.` })
         socket.broadcast.to(client.room).emit('message', { user: 'admin', text: `${client.name} has joined the chat.` });
-        socket.join(client.room);
+
         callback();
     })
     socket.on('disconnect', () => {
         console.log('Got disconnect!');
     });
-    socket.on('send-message', (message, callback)=>{
+    socket.on('send-message', (message, callback) => {
         const client = getClient(socket.id);
-        io.to(client.room).emit('message', {user:client.name, text: message});
+        io.to(client.room).emit('message', { user: client.name, text: message });
     })
 })
 
