@@ -24,6 +24,6 @@ const removeClient = (id) =>{
 
 const getClient = (id) => clients.find((c)=>c.id === id);
 
-const getClientRoom = (room) => clients.filter((c)=>c.room === room)
+const getClientRoom = (room) => clients.filter((c) => c.room === room);
 
 module.exports = {addClient,removeClient,getClient,getClientRoom};
