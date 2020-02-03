@@ -2,27 +2,27 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #2979FF;
+    background: #465EFC;
     border-radius: 4px 4px 0 0;
     height: 60px;
-    width: 100%;
+    width: 100%;    
+    color: white;
   }
   
   .HeaderContainerL {
     flex: 0.5;
-    display: flex;
     align-items: center;
+    display: flex;
     margin-left: 5%;
+  }
+
+  .HeaderContainerL a{
     color: white;
   }
   
   .HeaderContainerR {
     display: flex;
     flex: 0.5;
-    justify-content: flex-end;
-    margin-right: 5%;
-  }
-  
-  .onlineIcon {
-    margin-right: 5%;
+    justify-content: flex-start;
+    margin-right: 75%;
   }

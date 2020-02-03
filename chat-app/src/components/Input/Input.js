@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './Input.css';
+import { IoIosSend } from "react-icons/io";
 
 const Input = ({message, setMessage, sendMessage}) => {
     return (
@@ -13,7 +14,7 @@ const Input = ({message, setMessage, sendMessage}) => {
                 onChange={({ target: { value } }) => setMessage(value)}
                 onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
             />
-            <button className="send" onClick={e => sendMessage(e)}>Send</button>
+            <button className="send eff" onClick={e => sendMessage(e)}><IoIosSend className="large"/></button>
         </form>
     )
 }

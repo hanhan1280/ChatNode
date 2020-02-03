@@ -24,7 +24,6 @@ io.on('connection', (socket) => {
         socket.emit('message', { user: 'admin', text: `${client.name}, welcome to room ${client.room}.` })
         socket.broadcast.to(client.room).emit('message', { user: 'admin', text: `${client.name} has joined the chat.` });
 
-
         callback();
     })
 
